@@ -78,9 +78,6 @@ class AuctionHouse extends PluginBase {
 		if($this->getServer()->getPluginManager()->getPlugin("EconomyAPI") !== null) {
 			$this->setEconomyProvider(new EconomySProvider());
 		} else {
-			$this->economyProvider = null;
-		}
-		if($this->economyProvider == null) {
 			$this->getLogger()->notice("No economy plugin has been found, will now disable.");
 			$this->getServer()->getPluginManager()->disablePlugin($this);
 			return;
